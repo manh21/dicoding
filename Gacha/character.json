@@ -1,0 +1,198 @@
+[
+    {
+      "id": 1,
+      "image": "/assets/images/Traveler_Female_Card.webp",
+      "name": "Lumine",
+      "sex": "Female",
+      "birthday": "Unknown",
+      "constellation": "Viator/Viatrix",
+      "region": "Another World",
+      "affiliation": "Neutral",
+      "vision": "Adaptive",
+      "weapon": "Sword",
+      "rarity": "5",
+      "titles": [
+        "Outlander"
+      ],
+      "combat-info": [
+        {
+          "name": "Anemo Talents",
+          "data": [
+            {
+              "type": "Combat Talent - Normal/Charged Attack",
+              "name": "Foreign Ironwind",
+              "icon": "https://vignette.wikia.nocookie.net/gensin-impact/images/1/1f/Talent_Foreign_Ironwind.png",
+              "info": "Normal Attack: Perform up to 5 consecutive strikes. Charged Attack: Consumes a certain amount of Stamina to unleash 2 rapid sword strikes."
+            },
+            {
+              "type": "Combat Talent - Elemental Skill",
+              "name": "Palm Vortex",
+              "icon": "https://vignette.wikia.nocookie.net/gensin-impact/images/0/07/Talent_Palm_Vortex.png",
+              "info": "Grasping the wind's might, you form a vortex of vacuum in your palm, causing continuous Anemo DMG to enemies in front of you. The vacuum vortex explodes when the skill duration ends, causing a greater amount of Anemo DMG over a larger area. Hold: DMG and AoE will gradually increase. Elemental Absorption: If the vortex comes into contact with Hydro/Pyro/Cryo/Electro elements, it will deal additional elemental DMG of that type. Elemental Absorption may only occur once per use."
+            },
+            {
+              "type": "Combat Talent - Elemental Burst",
+              "name": "Gust Surge",
+              "icon": "https://vignette.wikia.nocookie.net/gensin-impact/images/9/98/Talent_Gust_Surge.png",
+              "info": "Guiding the path of the wind currents, you summon a forward-moving tornado that pulls objects and opponents towards itself, dealing continuous Anemo DMG."
+            },
+            {
+              "type": "Passive Talent 1",
+              "name": "Slitting Wind",
+              "icon": "https://vignette.wikia.nocookie.net/gensin-impact/images/2/22/Talent_Slitting_Wind.png",
+              "info": "The last hit of a Normal Attack combo unleashes a wind blade, dealing 60% of ATK as Anemo DMG to all opponents in its path."
+            },
+            {
+              "type": "Passive Talent 2",
+              "name": "Second Wind",
+              "icon": "https://vignette.wikia.nocookie.net/gensin-impact/images/5/5e/Talent_Second_Wind.png",
+              "info": "Palm Vortex kills regenerate 2% HP for 5s. This effect can only occur once every 5s."
+            }
+          ]
+        },
+        {
+          "name": "Anemo Constellation",
+          "data": [
+            {
+              "name": "Raging Vortex",
+              "effect": "Palm Vortex pulls in enemies within a 5m radius."
+            },
+            {
+              "name": "Uprising Whirlwind",
+              "effect": "Increases Energy Recharge by 16%."
+            },
+            {
+              "name": "Sweeping Gust",
+              "effect": "Increases the level of Gust Surge by 3. Maximum upgrade level is 15."
+            },
+            {
+              "name": "Cherishing Breezes",
+              "effect": "Reduces DMG taken while casting Palm Vortex by 10%"
+            },
+            {
+              "name": "Vortex Stellaris",
+              "effect": "Increases the level of Palm Vortex by 3. Maximum upgrade level is 15."
+            },
+            {
+              "name": "Interwinded Winds",
+              "effect": "Targets who take DMG from Gust Surge have their Anemo RES decreased by 20%.<br>If an Elemental Absorption occurred, then their RES towards the corresponding Element is also decreased by 20%. "
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "image": "/assets/images/Character_Qiqi_Card.webp",
+      "name": "Qiqi",
+      "sex": "Female",
+      "birthday": "March 3",
+      "constellation": "Pristina Nola",
+      "region": "Liyue",
+      "affiliation": "Bubu Pharmacy",
+      "vision": "Cryo",
+      "weapon": "Sword",
+      "rarity": "5",
+      "titles": [
+        "Cryo",
+        "Icy Resurreciton"
+      ]
+    },
+    {
+      "id": 3,
+      "image": "/assets/images/Character_Diluc_Card.webp",
+      "name": "Diluc Ragnvindr",
+      "sex": "Male",
+      "birthday": "April 30th",
+      "constellation": "Noctua",
+      "region": "Mondstadt",
+      "affiliation": "Unknown",
+      "vision": "Pyro",
+      "weapon": "Claymore",
+      "rarity": "5",
+      "titles": [
+        "Dark Side of Dawn"
+      ]
+    },
+    {
+      "id": 4,
+      "image": "/assets/images/Character_Jean_Card.webp",
+      "name": "Jean Gunnhildr",
+      "sex": "Female",
+      "birthday": "March 14th",
+      "constellation": "Leo Minor",
+      "region": "Mondstadt",
+      "affiliation": "Knights of Favonius",
+      "vision": "Anemo",
+      "weapon": "Sword",
+      "rarity": "5",
+      "titles": [
+        "Dandelion Knight",
+        "Acting Grandmaster"
+      ]
+    },
+    {
+      "id": 5,
+      "image": "/assets/images/Character_Klee_Card.webp",
+      "name": "Klee",
+      "sex": "Female",
+      "birthday": "July 27th",
+      "constellation": "Trifolium",
+      "region": "Mondstadt",
+      "affiliation": "Knights of Favonius",
+      "vision": "Pyro",
+      "weapon": "Catalyst",
+      "rarity": "5",
+      "titles": [
+        "Fleeing Sunlight"
+      ]
+    },
+    {
+      "id": 6,
+      "image": "/assets/images/Character_Venti_Card.webp",
+      "name": "Venti",
+      "sex": "Male",
+      "birthday": "June 16th",
+      "constellation": "Carmen Dei",
+      "region": "Mondstadt",
+      "affiliation": "Archons",
+      "vision": "Anemo",
+      "weapon": "Bow",
+      "rarity": "5",
+      "titles": [
+        "Windborne Bard","The God of Freedom","Tone-Deaf Bard"
+      ]
+    },
+    {
+      "id": 7,
+      "image": "/assets/images/Character_Mona_Card.webp",
+      "name": "Mona",
+      "sex": "Female",
+      "birthday": "August 31st",
+      "constellation": "Astrolabos",
+      "region": "Mondstadt",
+      "affiliation": "Unknown",
+      "vision": "Hydro",
+      "weapon": "Catalyst",
+      "rarity": "5",
+      "titles": [
+        "Enigmatic Astrologer","Astral Reflection"
+      ]
+    },
+    {
+      "id": 8,
+      "image": "/assets/images/Character_Keqing_Card.webp",
+      "name": "Keqing",
+      "sex": "Female",
+      "birthday": "November 20th",
+      "constellation": "Trulla Cementarii",
+      "region": "Liyue",
+      "affiliation": "Liyue Qixing",
+      "vision": "Electro",
+      "weapon": "Sword",
+      "rarity": "5",
+      "titles": [
+        "Driving Thunder","Yuheng of the Liyue Qixing"
+      ]
+    }
+  ]
