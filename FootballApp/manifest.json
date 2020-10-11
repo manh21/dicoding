@@ -1,6 +1,6 @@
 {
-    "name": "Gacha",
-    "short_name": "Gacha",
+    "name": "Football App",
+    "short_name": "Football App",
     "theme_color": "#000000",
     "background_color": "#fafafa",
     "display": "standalone",
@@ -20,4 +20,4 @@
           "purpose": "any"
         }
     ]
-  }
+}

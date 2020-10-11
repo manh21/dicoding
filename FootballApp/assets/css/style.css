@@ -1,0 +1,180 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Utilities */
+.mx {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.fa-star {
+    color: gold;
+    font-size: 1.8rem;
+}
+
+strong {
+    font-weight: bold;
+}
+
+ /* Flexbox */
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+.flex-item{
+    display: flex;
+    padding: 0 0.8rem;
+    /* width: 33.3333%; */
+    width: 25%;
+}
+
+
+.home-wrapper{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.home-wrapper .row.col {
+    padding-top: 12px;
+}
+
+#card-1 .card-content{
+    background-image: url('../images/cover1.webp');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+}
+
+#card-1 a{
+    padding: 10px;
+    margin: 0 auto;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1rem;
+    color: white;
+}
+
+.home-wrapper .card-title {
+    margin: 0 0 8px 0;
+}
+
+#character img {
+    max-width: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.character-name{
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    margin: 0;
+    padding: 5px;
+}
+
+.character-wrapper .avatar {
+    max-width: 100%;
+    object-fit: cover;
+    object-position: top;
+    margin: 0;
+    padding: 0;
+}
+
+.character-wrapper .card .col{
+    padding: 0;
+}
+
+.character-wrapper .item{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    overflow: hidden;
+    padding: 1rem;
+}
+
+.character-wrapper .data-label{
+    flex-basis: 120px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+}
+
+.character-wrapper .data-value{
+    flex-basis: 200px;
+    text-align: center;
+}
+
+
+/* Small Device Breakpoint */
+@media only screen and (max-width: 600px) {
+    .flex-item{
+        width: 50%;
+        padding: 0 0.5rem;
+    }
+}
+
+/* Tablet Device Breakpoint */
+@media only screen and (min-width: 603px) {
+    .flex-item{
+        width: 33.3333%;
+    }
+}
+
+/* Large Desktop Breakpoint */
+@media only screen and (min-width: 993px) {
+    .flex-item{
+        width: 25%;
+    }
+}
+/* Extra Large Breakpoint */
+@media only screen and (min-width: 1201px) {
+    
+}
+
+
+
+
+/* 
+COOL ICON
+*/
+.flex-center {
+  width: 100%;
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-3d {
+  padding: 10px;
+  -webkit-animation: icon3d 200ms 10;
+  animation: icon3d 200ms 10;
+  color: #000;
+}
+.icon-3d:hover {
+  -webkit-animation: icon3d 200ms infinite;
+  animation: icon3d 200ms infinite;
+}
+
+@keyframes icon3d {
+  0% {
+    text-shadow: 5px 4px #f44336, -5px -6px #2196f3;
+  }
+  25% {
+    text-shadow: -5px -6px #f44336, 5px 4px #2196f3;
+  }
+  50% {
+    text-shadow: 5px -4px #f44336, -8px 4px #2196f3;
+  }
+  75% {
+    text-shadow: -8px -4px #f44336, -5px -4px #2196f3;
+  }
+  100% {
+    text-shadow: -5px 0 #f44336, 5px -4px #2196f3;
+  }
+}
