@@ -13,6 +13,18 @@
     font-size: 1.8rem;
 }
 
+.fa-heart {
+    font-size: 1.3rem !important;
+}
+
+.fa-red {
+    color: red !important;
+}
+
+.text-bold{
+    font-weight: 500 !important;
+}
+
 strong {
     font-weight: bold;
 }
@@ -30,6 +42,23 @@ strong {
     padding: 0 0.8rem;
     /* width: 33.3333%; */
     width: 25%;
+}
+
+.clubs-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+.club-item{
+    display: flex;
+    padding: 0 0.8rem;
+    width: 25%;
+}
+
+.fa-heart{
+    color: grey !important;
 }
 
 
@@ -58,61 +87,69 @@ strong {
     color: white;
 }
 
+
 .home-wrapper .card-title {
     margin: 0 0 8px 0;
 }
 
-#character img {
-    max-width: 100%;
-    object-fit: cover;
-    object-position: top;
+.teamLogo{
+    /* background-color: darkgray; */
+    padding: 10px;
 }
 
-.character-name{
-    text-align: center;
-    text-decoration: none;
-    color: black;
-    margin: 0;
-    padding: 5px;
+.home-wrapper .card-content{
+    backdrop-filter: blur(5px);
+    color: white;
 }
 
-.character-wrapper .avatar {
-    max-width: 100%;
-    object-fit: cover;
-    object-position: top;
-    margin: 0;
-    padding: 0;
+.home-wrapper .card{
+    background-image: url('../images/stadium1.jpg');
+    background-position: bottom;
+    background-size: cover;
+
+    /* filter: blur(2px); */
 }
 
-.character-wrapper .card .col{
-    padding: 0;
+.tab a{
+    color: white !important;
 }
 
-.character-wrapper .item{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    overflow: hidden;
-    padding: 1rem;
+.myteams-wrapper .card-content{
+    backdrop-filter: blur(5px);
+    color: white;
 }
 
-.character-wrapper .data-label{
-    flex-basis: 120px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 0;
-    margin: 0;
+.myteams-wrapper .card{
+    background-image: url('../images/stadium3.jpg');
+    background-position: bottom;
+    background-size: cover;
 }
 
-.character-wrapper .data-value{
-    flex-basis: 200px;
-    text-align: center;
-}
 
 
 /* Small Device Breakpoint */
 @media only screen and (max-width: 600px) {
+    body{
+        /* background-color: rgb(255, 245, 105) !important; */
+        background-image: url('../images/stadium1.jpg');
+        background-position: bottom;
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: white;
+    }
+    .card{
+        background: rgba(0,0,0,0.4);
+        background-image: none !important;
+        backdrop-filter: blur(4px);
+    }
+    .about-wrapper{
+        backdrop-filter: blur(5px);
+    }
     .flex-item{
+        width: 50%;
+        padding: 0 0.5rem;
+    }
+    .club-item{
         width: 50%;
         padding: 0 0.5rem;
     }
@@ -123,11 +160,17 @@ strong {
     .flex-item{
         width: 33.3333%;
     }
+    .club-item{
+        width: 33.3333%;
+    }
 }
 
 /* Large Desktop Breakpoint */
 @media only screen and (min-width: 993px) {
     .flex-item{
+        width: 25%;
+    }
+    .club-item{
         width: 25%;
     }
 }

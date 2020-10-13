@@ -1,3 +1,5 @@
+import { Home } from './comp/home.js';
+
 document.addEventListener('DOMContentLoaded', function() {
     const BASE_URL = window.location.origin;
     const BodyContent = document.querySelector(".body-content");
@@ -31,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 el.innerHTML = res;
             });
             // Initialize NavLink Listener
-            listenNavLink();
+            Home();
         })
         .catch(err => {
             console.error(err);
@@ -74,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(res => {
             BodyContent.innerHTML = res;
             if(page == "home" || page == "characterlist"){
-                // listenCharacter();
+                listenCharacter();
             }
         })
         .catch(err => {
