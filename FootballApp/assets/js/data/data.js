@@ -1,4 +1,4 @@
-[
+export const competitions = [
     {
         "id": 2013,
         "name": "Série A",
@@ -59,4 +59,4 @@
         "name": "FIFA World Cup",
         "code": "WC"
     }
-]
+];

@@ -21,6 +21,10 @@
     color: red !important;
 }
 
+.fa-grey{
+    color: grey !important;
+}
+
 .text-bold{
     font-weight: 500 !important;
 }
@@ -57,9 +61,7 @@ strong {
     width: 25%;
 }
 
-.fa-heart{
-    color: grey !important;
-}
+
 
 
 .home-wrapper{
@@ -125,7 +127,19 @@ strong {
     background-size: cover;
 }
 
-
+@media only screen and (max-width: 320px){
+    .flex-item{
+        width: 100%;
+        padding: 0 0.8rem;
+    }
+    .club-item{
+        width: 100% !important;
+        padding: 0 0.8rem;
+    }
+    .card{
+        width: 100%;
+    }
+}
 
 /* Small Device Breakpoint */
 @media only screen and (max-width: 600px) {
@@ -150,8 +164,11 @@ strong {
         padding: 0 0.5rem;
     }
     .club-item{
-        width: 50%;
+        width: 100%;
         padding: 0 0.5rem;
+    }
+    .club-item .card{
+        width: 100%;
     }
 }
 
