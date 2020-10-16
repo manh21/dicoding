@@ -1,9 +1,11 @@
 import { addFavoriteTeam, removeFavoriteTeam, buildFavButton, getFavoriteTeams } from "./fav.js";
+import { showLoading } from "./utilities.js";
 
 const myTeams = () => {
     let clubsContainer = document.querySelector('.clubs-container');
 
     function buildClubItem() {
+        showLoading(clubsContainer);
         let html = [];
 
         getFavoriteTeams().then(res => {
@@ -21,6 +23,10 @@ const myTeams = () => {
                 html.push(`<div class="card-content">`);
                 html.push(`<span class="card-title text-bold center-align">${data.shortName}</span>`);
                 html.push(`</div>`);
+                html.push(`<div class="card-action center-align">`);
+                html.push(`<a class="waves-effect purple darken-1 waves-light btn more-info" data-id="${data.id}">More Info</a>`);
+                // html.push(`<a href="#">This is a link</a>`);
+                html.push(`</div>`);
                 html.push(`</div>`);
                 // html.push(`</a>`);
                 html.push(`</div>`);
@@ -28,6 +34,7 @@ const myTeams = () => {
 
             clubsContainer.innerHTML = html.join('\n');
             favEventListener();
+            infoEventListener();
 
         }).catch(err => {
             console.error(err);
@@ -41,24 +48,36 @@ const myTeams = () => {
         FAVORITE Button Event Listener
     */
     function favEventListener() {
-    document.querySelectorAll('button.btn-fav').forEach(elem => {
-        elem.addEventListener('click', e => {
-            let dataId = e.currentTarget.getAttribute('data-id');
-            let parentClubItem = e.currentTarget.closest('.club-item');
-            
-            if(e.target.classList.contains('fa-red')){
-                removeFavoriteTeam(dataId);
-                e.target.classList.remove('fa-red');
-                e.target.classList.add('fa-grey');
-                parentClubItem.remove();
-            } else {
-                addFavoriteTeam(teamData, dataId);
-                e.target.classList.remove('fa-grey');
-                e.target.classList.add('fa-red');
-            }
+        document.querySelectorAll('button.btn-fav').forEach(elem => {
+            elem.addEventListener('click', e => {
+                let dataId = e.currentTarget.getAttribute('data-id');
+                let parentClubItem = e.currentTarget.closest('.club-item');
+                
+                if(e.target.classList.contains('fa-red')){
+                    removeFavoriteTeam(dataId);
+                    e.target.classList.remove('fa-red');
+                    e.target.classList.add('fa-grey');
+                    parentClubItem.remove();
+                } else {
+                    addFavoriteTeam(teamData, dataId);
+                    e.target.classList.remove('fa-grey');
+                    e.target.classList.add('fa-red');
+                }
+            });
         });
-    });
-}
+    }
+
+    /*
+        MORE INFO Button Event Listener
+    */
+    function infoEventListener() {
+        document.querySelectorAll('a.more-info').forEach(elem => {
+            elem.addEventListener('click', e => {
+                let dataId = e.currentTarget.getAttribute('data-id');
+                console.log(dataId);
+            });
+        });
+    }
 }
 
 export default myTeams;

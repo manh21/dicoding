@@ -1,5 +1,6 @@
 import { competitions } from "../data/data.js";
 import { addFavoriteTeam, removeFavoriteTeam, buildFavButton, getFavoriteTeams } from "./fav.js";
+import { showLoading } from "./utilities.js";
 import API from "../data/api.js";
 
 let teamData = null;
@@ -30,13 +31,15 @@ const Home = () => {
     *   BUILD CLUB ITEM
     */
     function buildClubItem(id = 2021) {
+        // showLoading(document.getElementById('main-content'));
+        showLoading(clubsContainer);
         let html = [];
         API.getTeams(id).then(teams => {    
-
             // Set Team Data
             teamData = teams;
 
             getFavoriteTeams().then(res => {
+
                 let favTeams = res;
                 teamData.forEach(data => {
                     let image = data.crestUrl ? data.crestUrl : '/assets/images/noimage.webp';
@@ -52,6 +55,10 @@ const Home = () => {
                     html.push(`<div class="card-content">`);
                     html.push(`<span class="card-title text-bold center-align">${data.shortName}</span>`);
                     html.push(`</div>`);
+                    html.push(`<div class="card-action center-align">`);
+                    html.push(`<a class="waves-effect purple darken-1 waves-light btn more-info" data-id="${data.id}">More Info</a>`);
+                    // html.push(`<a href="#">This is a link</a>`);
+                    html.push(`</div>`);
                     html.push(`</div>`);
                     // html.push(`</a>`);
                     html.push(`</div>`);
@@ -59,6 +66,8 @@ const Home = () => {
 
                 clubsContainer.innerHTML = html.join('\n');
                 favEventListener();
+                infoEventListener();
+
             }).catch(err => {
                 console.error(err);
             });
@@ -94,6 +103,18 @@ const Home = () => {
         });
     }
 
+    /*
+        MORE INFO Button Event Listener
+    */
+    function infoEventListener() {
+            document.querySelectorAll('a.more-info').forEach(elem => {
+                elem.addEventListener('click', e => {
+                    let dataId = e.currentTarget.getAttribute('data-id');
+                    console.log(dataId);
+                });
+            });
+    }
+
     /* 
         TODO: Make matches history page
     */
@@ -112,11 +133,9 @@ const Home = () => {
     document.querySelectorAll('.tabs .tab a').forEach(elem => {
         elem.addEventListener('click', e => {
             let dataId = e.currentTarget.getAttribute('data-id');
-            console.log(dataId);
             buildClubItem(dataId);
         });
     });
-
 }
 
 export default Home;
