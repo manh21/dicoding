@@ -1,4 +1,6 @@
 {
+    "push_name": "Push Notifications FCM",
+    "gcm_sender_id": "489407451958",
     "name": "Football App",
     "short_name": "Football App",
     "theme_color": "#000000",
