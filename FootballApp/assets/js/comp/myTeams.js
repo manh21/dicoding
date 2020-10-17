@@ -1,5 +1,6 @@
 import { addFavoriteTeam, removeFavoriteTeam, buildFavButton, getFavoriteTeams } from "./fav.js";
 import { showLoading } from "./utilities.js";
+import Jadwal from "./jadwal.js";
 
 const myTeams = () => {
     let clubsContainer = document.querySelector('.clubs-container');
@@ -75,6 +76,7 @@ const myTeams = () => {
             elem.addEventListener('click', e => {
                 let dataId = e.currentTarget.getAttribute('data-id');
                 console.log(dataId);
+                Jadwal(dataId);
             });
         });
     }

@@ -2,6 +2,7 @@ import { competitions } from "../data/data.js";
 import { addFavoriteTeam, removeFavoriteTeam, buildFavButton, getFavoriteTeams } from "./fav.js";
 import { showLoading } from "./utilities.js";
 import API from "../data/api.js";
+import Jadwal from "./jadwal.js";
 
 let teamData = null;
 
@@ -110,6 +111,7 @@ const Home = () => {
         document.querySelectorAll('a.more-info').forEach(elem => {
             elem.addEventListener('click', e => {
                 let dataId = e.currentTarget.getAttribute('data-id');
+                Jadwal(dataId);
                 console.log(dataId);
             });
         });
