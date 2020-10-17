@@ -1,5 +1,6 @@
 import Home from "./comp/home.js";
 import myTeams from "./comp/myTeams.js"
+import Jadwal from "./comp/jadwal.js";
 
 document.addEventListener('DOMContentLoaded', function() {
     const BASE_URL = window.location.origin;
@@ -82,6 +83,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     break;
                 case 'myteams':
                     myTeams();
+                    break;
+                case 'jadwal':
+                    Jadwal();
                     break;
             }
         })

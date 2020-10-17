@@ -107,12 +107,12 @@ const Home = () => {
         MORE INFO Button Event Listener
     */
     function infoEventListener() {
-            document.querySelectorAll('a.more-info').forEach(elem => {
-                elem.addEventListener('click', e => {
-                    let dataId = e.currentTarget.getAttribute('data-id');
-                    console.log(dataId);
-                });
+        document.querySelectorAll('a.more-info').forEach(elem => {
+            elem.addEventListener('click', e => {
+                let dataId = e.currentTarget.getAttribute('data-id');
+                console.log(dataId);
             });
+        });
     }
 
     /* 

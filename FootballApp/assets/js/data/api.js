@@ -33,6 +33,25 @@ class API {
         })
     };
 
+    static getJadwalPertandigan(id){
+        const proxyurl = "https://cors-anywhere.herokuapp.com/";
+        const uri = new URL(`teams/${id}/matches`, baseUrl);
+        uri.searchParams.set('status', 'SCHEDULED');
+        const request = new Request(uri, requestOptions);
+        return fetch(request).then(res => res.json())
+        .then(res => {
+            // console.log(res);            
+            if(res){
+                return Promise.resolve(res.matches);
+            } else {
+                return Promise.reject(`The request was made but no response was received`);
+            }
+        }).catch(err => {
+            console.error(err);
+            return Promise.reject();
+        })
+    }
+
 }
 
 export default API;
