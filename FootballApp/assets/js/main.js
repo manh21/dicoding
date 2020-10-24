@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize
     loadNavigation();  
-    loadPage();
+    loadPage(page);
     // if(window.location.pathname === "/jadwal.html"){
     //     Jadwal();
     // } else {
