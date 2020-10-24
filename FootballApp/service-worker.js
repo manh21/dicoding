@@ -1,6 +1,7 @@
 const CACHE_NAME = 'gacha-v1';
 var urlsToCache = [
 	'/',
+	'/jadwal.html',
 	'/manifest.json',
 	'/nav.html',
 	'/index.html',
@@ -67,30 +68,37 @@ self.addEventListener('activate', function(event){
 })
 
 self.addEventListener('fetch', function(event) {
-    // event.respondWith(
-    //     caches.open(CACHE_NAME).then(function(cache) {
-    //         return cache.match(event.request).then(function(response) {
-    //             var fetchPromise = fetch(event.request).then(function(networkResponse) {
-    //                 cache.put(event.request, networkResponse.clone());
-    //                 console.log("ServiceWorker: Memuat aset dari server: ", event.request.url);
-    //                 return networkResponse;
-    //             })
-    //             return response || fetchPromise;
-    //         })
-    //     })
-    // );
-	event.respondWith(
-		caches.match(event.request, {cacheName:CACHE_NAME})
-		.then(function(response) {
-			if(response){
-				// console.log("ServiceWorker: Gunakan aset dari cache: ", response.url);
-				return response;
-			}
+    event.respondWith(
+        caches.open(CACHE_NAME).then(function(cache) {
+            return cache.match(event.request).then(function(response) {
+                let fetchPromise = fetch(event.request).then(function(networkResponse) {
+                    cache.put(event.request, networkResponse.clone());
+                    console.log("ServiceWorker: Memuat aset dari server: ", event.request.url);
+                    return networkResponse;
+				})
+
+				if(response){
+					console.log("ServiceWorker: Gunakan aset dari cache: ", response.url);
+					return response;
+				} else {
+					return fetchPromise;
+				}
+
+            })
+        })
+    );
+	// event.respondWith(
+	// 	caches.match(event.request, {cacheName:CACHE_NAME})
+	// 	.then(function(response) {
+	// 		if(response){
+	// 			// console.log("ServiceWorker: Gunakan aset dari cache: ", response.url);
+	// 			return response;
+	// 		}
 			
-			// console.log("ServiceWorker: Memuat aset dari server: ", event.request.url);
-			return fetch(event.request);
-		})
-	);
+	// 		// console.log("ServiceWorker: Memuat aset dari server: ", event.request.url);
+	// 		return fetch(event.request);
+	// 	})
+	// );
 });
 
 // event push notification

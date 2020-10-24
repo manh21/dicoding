@@ -21,8 +21,13 @@ document.addEventListener('DOMContentLoaded', function() {
     requestOptions.headers.set('accept', 'image/webp,image/apng,image/*,*/*');
 
     // Initialize
-    loadNavigation();
-    loadPage(page);
+    loadNavigation();  
+    loadPage();
+    // if(window.location.pathname === "/jadwal.html"){
+    //     Jadwal();
+    // } else {
+    //     loadPage(page);
+    // }
 
 
     function loadNavigation() {

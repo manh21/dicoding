@@ -26,6 +26,7 @@ const myTeams = () => {
                 html.push(`</div>`);
                 html.push(`<div class="card-action center-align">`);
                 html.push(`<a class="waves-effect purple darken-1 waves-light btn more-info" data-id="${data.id}">More Info</a>`);
+                // html.push(`<a href="./jadwal.html?id=${data.id}" class="waves-effect purple darken-1 waves-light btn more-info" data-id="${data.id}">More Info</a>`);
                 // html.push(`<a href="#">This is a link</a>`);
                 html.push(`</div>`);
                 html.push(`</div>`);
