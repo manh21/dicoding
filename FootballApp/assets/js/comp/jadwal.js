@@ -17,12 +17,8 @@ let dataPertandingan = null;
 function Jadwal(id = 81) {
     console.log('STARTING JADWAL CONTROLLER')
 
-    // let urlParams = new URLSearchParams(window.location.search);
-    // if(urlParams.get("id")) id = urlParams.get("id");
-
     function loadPage() {
 
-        // const uri = new URL(`/pages/jadwal.html?id=${teamId}`, BASE_URL);
         const uri = new URL(`/pages/jadwal.html`, BASE_URL);
         const request = new Request(uri, requestOptions);
         

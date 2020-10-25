@@ -23,11 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize
     loadNavigation();  
     loadPage(page);
-    // if(window.location.pathname === "/jadwal.html"){
-    //     Jadwal();
-    // } else {
-    //     loadPage(page);
-    // }
 
 
     function loadNavigation() {
@@ -96,7 +91,6 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(err => {
             console.error(err);
-            // BodyContent.innerHTML = `<p>Ups... halaman tidak dapat diakses.</p>`;
         });
     }
 });

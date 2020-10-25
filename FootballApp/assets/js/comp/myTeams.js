@@ -15,7 +15,6 @@ const myTeams = () => {
                 let image = data.crestUrl ? data.crestUrl : '/assets/images/noimage.webp';
 
                 html.push(`<div class="club-item">`);
-                // html.push(`<a data-id="${data.id}" >`);
                 html.push(`<div class="card">`);
                 html.push(`<div class="card-image">`);
                 html.push(`<img class="teamLogo" src="${image}">`);
@@ -26,11 +25,8 @@ const myTeams = () => {
                 html.push(`</div>`);
                 html.push(`<div class="card-action center-align">`);
                 html.push(`<a class="waves-effect purple darken-1 waves-light btn more-info" data-id="${data.id}">More Info</a>`);
-                // html.push(`<a href="./jadwal.html?id=${data.id}" class="waves-effect purple darken-1 waves-light btn more-info" data-id="${data.id}">More Info</a>`);
-                // html.push(`<a href="#">This is a link</a>`);
                 html.push(`</div>`);
                 html.push(`</div>`);
-                // html.push(`</a>`);
                 html.push(`</div>`);
             })
 

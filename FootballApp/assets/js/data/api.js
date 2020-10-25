@@ -16,7 +16,6 @@ requestOptions.headers.append('X-Auth-Token', apiKey);
 class API {
 
     static getTeams(competitionId){
-        const proxyurl = "https://cors-anywhere.herokuapp.com/";
         const uri = new URL(`competitions/${competitionId}/teams`, baseUrl);
         const request = new Request(uri, requestOptions);
         return fetch(request).then(res => res.json())
@@ -34,7 +33,6 @@ class API {
     };
 
     static getJadwalPertandigan(id){
-        const proxyurl = "https://cors-anywhere.herokuapp.com/";
         const uri = new URL(`teams/${id}/matches`, baseUrl);
         uri.searchParams.set('status', 'SCHEDULED');
         const request = new Request(uri, requestOptions);

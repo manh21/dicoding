@@ -24,7 +24,7 @@ export async function addFavoriteTeam(teamsData, id) {
         // be sent to the catch() method below.
         // The exact same rule if any exception is thrown what so ever.
     
-        await db.teams.add(data);
+        await db.teams.put(data);
     
     }).catch(function (error) {
         // Log or display the error
