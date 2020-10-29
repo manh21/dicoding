@@ -3,7 +3,8 @@ import { showLoading } from "./utilities.js";
 import Jadwal from "./jadwal.js";
 
 const myTeams = () => {
-    let clubsContainer = document.querySelector('.clubs-container');
+    const BodyContent = document.querySelector(".body-content");
+    const clubsContainer = document.querySelector('.clubs-container');
 
     function buildClubItem() {
         showLoading(clubsContainer);
@@ -11,31 +12,46 @@ const myTeams = () => {
 
         getFavoriteTeams().then(res => {
             let favTeams = res;
-            favTeams.forEach(data => {
-                let image = data.crestUrl ? data.crestUrl : '/assets/images/noimage.webp';
+            if(res.length > 0){
+                favTeams.forEach(data => {
+                    let image = data.crestUrl ? data.crestUrl : '/assets/images/noimage.webp';
 
-                html.push(`<div class="club-item">`);
-                html.push(`<div class="card">`);
-                html.push(`<div class="card-image">`);
-                html.push(`<img class="teamLogo" src="${image}">`);
-                html.push(`<button data-id="${data.id}" class="btn-floating halfway-fab btn-fav white waves-effect"><i class="fa fa-heart fa-red"></i></button>`);
-                html.push(`</div>`);
-                html.push(`<div class="card-content">`);
-                html.push(`<span class="card-title text-bold center-align">${data.shortName}</span>`);
-                html.push(`</div>`);
-                html.push(`<div class="card-action center-align">`);
-                html.push(`<a class="waves-effect purple darken-1 waves-light btn more-info" data-id="${data.id}">More Info</a>`);
-                html.push(`</div>`);
-                html.push(`</div>`);
-                html.push(`</div>`);
-            })
+                    html.push(`<div class="club-item">`);
+                    html.push(`<div class="card">`);
+                    html.push(`<div class="card-image">`);
+                    html.push(`<img class="teamLogo" src="${image}">`);
+                    html.push(`<button data-id="${data.id}" class="btn-floating halfway-fab btn-fav white waves-effect"><i class="fa fa-heart fa-red"></i></button>`);
+                    html.push(`</div>`);
+                    html.push(`<div class="card-content">`);
+                    html.push(`<span class="card-title text-bold center-align">${data.shortName}</span>`);
+                    html.push(`</div>`);
+                    html.push(`<div class="card-action center-align">`);
+                    html.push(`<a class="waves-effect purple darken-1 waves-light btn more-info" data-id="${data.id}">More Info</a>`);
+                    html.push(`</div>`);
+                    html.push(`</div>`);
+                    html.push(`</div>`);
+                })
 
-            clubsContainer.innerHTML = html.join('\n');
-            favEventListener();
-            infoEventListener();
+                clubsContainer.innerHTML = html.join('\n');
+                favEventListener();
+                infoEventListener();
+            } else {
+                let html = [];
+                html.push(`<div class="valign-wrapper">`);
+                html.push(`<h5 class="center-align">Tidak ada data team favorite</h5>`);
+                html.push(`</div>`);
+                clubsContainer.innerHTML = html.join('\n');
+            }
 
         }).catch(err => {
             console.error(err);
+
+            // Display Somthing
+            let html = [];
+            html.push(`<div class="valign-wrapper">`);
+            html.push(`<h5 class="center-align">Tidak ada data team fvorite</h5>`);
+            html.push(`</div>`);
+            clubsContainer.innerHTML = html.join('\n');
         });
         
         // console.log(data);
