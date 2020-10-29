@@ -38,9 +38,9 @@ const myTeams = () => {
             } else {
                 let html = [];
                 html.push(`<div class="valign-wrapper">`);
-                html.push(`<h5 class="center-align">Tidak ada data team fvorite</h5>`);
+                html.push(`<h5 class="center-align">Tidak ada data team favorite</h5>`);
                 html.push(`</div>`);
-                BodyContent.innerHTML = html.join('\n');
+                clubsContainer.innerHTML = html.join('\n');
             }
 
         }).catch(err => {
@@ -51,7 +51,7 @@ const myTeams = () => {
             html.push(`<div class="valign-wrapper">`);
             html.push(`<h5 class="center-align">Tidak ada data team fvorite</h5>`);
             html.push(`</div>`);
-            BodyContent.innerHTML = html.join('\n');
+            clubsContainer.innerHTML = html.join('\n');
         });
         
         // console.log(data);
